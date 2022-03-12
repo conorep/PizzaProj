@@ -1,0 +1,18 @@
+.btn-primary {
+    background-color: #10a7be;
+    border-color: #70CFDEFF;
+    color: white !important;
+}
+
+.err {
+    color: red;
+}
+
+a:hover {
+    background-color: #2b542c !important;
+    border-color: #0b2e13 !important;
+}
+
+ul {
+    list-style: none;
+}

@@ -1,0 +1,50 @@
+<include href="views/header.html"></include>
+<body>
+    <div class="container">
+        <h1>Diner Orders</h1>
+        
+        <table id="tblOrders" class="display" style="width: 100%">
+            <thead>
+                <tr>
+                    <td>OrderID</td>
+                    <td>Food</td>
+                    <td>Meal</td>
+                    <td>Condiments</td>
+                    <td>Date & Time</td>
+                </tr>
+            </thead>
+            <tbody>
+                <repeat group="{{@orders}}" value="{{@order}}">
+                    <tr>
+                        <td>{{@order['order_id']}}</td>
+                        <td>{{@order['item']}}</td>
+                        <td>{{@order['meal']}}</td>
+                        <td>{{@order['condiments']}}</td>
+                        <td>{{@order['order_date']}}</td>
+                    </tr>
+                </repeat>
+            </tbody>
+            <tfoot>
+                <td>OrderID</td>
+                <td>Food</td>
+                <td>Meal</td>
+                <td>Condiments</td>
+                <td>Date & Time</td>
+            </tfoot>
+        </table>
+        
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script>
+        $('#tblOrders').DataTable(
+                {
+                    responsive: true
+                }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SDEV 328 Quiz 3</title>
+</head>
+<body>
+    <h1>Hey. Check the console!</h1>
+    
+    <script>
+        console.log("Expected output of 5 - " + average( [2, 4, 9] ));
+        console.log("Expected output of 2.5 - " + average( [1.5, -2, 14, -3.5] ));
+        console.log("Expected output of 1.467 - " + average( [2, 3.4, "x", false, null, -1] ));
+
+        function average(numsArray)
+        {
+            let sumNums = 0;
+            let numElements = 0;
+            
+            for(let num of numsArray) {
+                if(typeof(num) == "number") {
+                    sumNums = sumNums + num;
+                    numElements ++;
+                }
+            }
+            
+            return sumNums / numElements;
+        }
+        
+    </script>
+</body>
+</html>

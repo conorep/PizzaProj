@@ -1,0 +1,25 @@
+/*
+    Great. More CSS.
+    Conor O'Brien
+    SDEV 328 Winter Qrtr
+    styles.css
+*/
+
+p {
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+.centerIt {
+    border: solid #838383 2px;
+    text-align: center;
+    background-color: #ececec;
+    width: 60%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 12px 1px rgb(81 102 122);
+}

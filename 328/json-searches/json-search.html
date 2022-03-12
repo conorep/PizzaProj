@@ -1,0 +1,43 @@
+<!--
+    Ah, html. Sweet.
+    Conor O'Brien
+    SDEV328 Winter Qrtr
+    json-search.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+          integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <title>We're All Searching</title>
+    <!--  Favicon  -->
+    <link rel='icon' type='image/png' href='images/questionmark.png'>
+</head>
+<body class="container">
+
+<div class="centerIt py-3 mt-3">
+    <h2>Input a name that you'd like to search for:</h2>
+
+    <label for="search-name">Enter a name</label>
+    <input type="text" class="mb-2" id="search-name">
+
+    <button class="btn btn-primary" id="get-it">Search</button>
+
+</div>
+
+<br>
+
+<div class="centerIt py-2 mb-2" id="writeHere">
+    <h6 class="py-2"> [awaiting input]</h6>
+</div>
+
+<script src="scripts/json-search.js"></script>
+</body>
+</html>

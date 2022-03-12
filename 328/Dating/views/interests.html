@@ -1,0 +1,73 @@
+<!--
+Conor O'Brien
+SDEV 328 Winter 2022
+interests.html
+-->
+<include href="includes/header.html"></include>
+
+<!--Main page content.-->
+<div id="bs-override" class="container ">
+    
+    <div class="container row border-dark  ml-1 p-3 pr-sm-0 my-shadow border border-light c">
+        
+        <div class="col-12 ">
+            <h2>Interests</h2>
+            <hr>
+        </div>
+        
+        <!--Main form content area.-->
+        <form class="row justify-content-md-center" action="#" id="dating-form" method="post">
+            
+            <fieldset class="form-group p-2 row ml-2">
+                
+                <!--  Outdoor  -->
+                <p class="ml-3"><strong>Outdoor Interests </strong></p>
+                <check if="{{ isset(@errors['outdoor']) }}">
+                    <span class="err">&nbsp;{{ @errors['outdoor'] }}</span>
+                </check>
+                <div class="form-group form-inline ml-md-3 pl-md-4">
+                    <repeat group="{{ @outdoor }}" value="{{ @outval }}">
+                        <div class="col-md-3 col-4 mb-2">
+                            <label class="justify-content-start" for="{{ @outval }}">
+                                <input type="checkbox" class="mr-2 " id="{{ @outval }}"
+                                       name="outdoor[]" value="{{ @outval }}">{{ @outval }}
+                            </label>
+                        </div>
+                    </repeat>
+                </div>
+                
+                <br>
+                
+                <!--  Indoor  -->
+                <p class="ml-3"><strong>Indoor Interests</strong></p>
+                <check if="{{ isset(@errors['indoor']) }}">
+                    <span class="err">&nbsp;{{ @errors['indoor'] }}</span>
+                </check>
+                <div class="form-group form-inline ml-md-3 pl-md-4">
+                    <repeat group="{{ @indoor }}" value="{{ @inval }}">
+                        <div class="col-md-3 col-4-sm col-6 mb-2">
+                            <label class="justify-content-start" for="{{ @inval }}">
+                                <input type="checkbox" class="mr-2" id="{{ @inval }}"
+                                       name="indoor[]" value="{{ @inval }}">{{ @inval }}
+                            </label>
+                        </div>
+                    </repeat>
+                </div>
+            
+            </fieldset>
+            
+            <!-- submit btn -->
+            <div class="pt-2 mr-5 w-100 ">
+                <button class="btn btn-primary float-right" type="submit">Next ></button>
+            </div>
+        
+        </form>
+    
+    </div>
+    
+    <br>
+
+</div>
+
+</body>
+</html>

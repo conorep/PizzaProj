@@ -1,0 +1,105 @@
+<!--
+Conor O'Brien
+SDEV 328 Winter 2022
+profile.html
+-->
+<include href="includes/header.html"></include>
+
+<!--Main page content.-->
+<div id="bs-override" class="container ">
+    
+    <div class="container row border-dark  ml-1 p-3 pr-sm-0 my-shadow border border-light c">
+        
+        <div class="col-12 ">
+            <h2>Profile</h2>
+            <hr>
+        </div>
+        
+        <!--Main form content area.-->
+        <form class="col-12 " action="#" id="dating-form" method="post">
+            
+            <div class="row justify-content-md-center">
+                
+                <!--  Profile info  -->
+                <div class="col-md-6 mb-md-0 mb-4 ">
+                    
+                    <fieldset class="form-group p-2 ">
+                        
+                        <!--Email-->
+                        <check if="{{ isset(@errors['email']) }}">
+                            <span class="err"> {{ @errors['email'] }}</span>
+                        </check>
+                        <div class="form-group ">
+                            <label class="font-weight-bold" for="email">Email Address</label>
+                            <input type="text" class="form-control" id="email" name="email" aria-describedby="email"
+                                   placeholder="Enter email" value="{{ @email }}">
+                        </div>
+                        
+                        <!--  State  -->
+                        <check if="{{ isset(@errors['state']) }}">
+                            <span class="err"> {{ @errors['state'] }}</span>
+                        </check>
+                        <p class="d-block"><strong>State</strong></p>
+                        <div class="form-group form-inline">
+                            <select class="form-control" name="state">
+                                <repeat group="{{ @states }}" value="{{ @state }}">
+                                    <option value="{{ @state }}" class="mr-2"
+                                    <check if="{{ @state == @userState}}">selected</check>
+                                    >{{ @state }}</option>
+                                </repeat>
+                            </select>
+                        </div>
+                        
+                        <!--  Seeking  -->
+                        <check if="{{ isset(@errors['sought']) }}">
+                            <span class="err"> {{ @errors['sought'] }}</span>
+                        </check>
+                        <p class="d-block"><strong>Seeking</strong></p>
+                        <div class="form-group form-inline">
+                            <repeat group="{{ @seeking }}" value="{{ @sought }}">
+                                <div class="radio">
+                                    <label>
+                                        <input id="{{ @sought }}" type="radio" name="sought" value="{{ @sought }}"
+                                               class="mr-2"
+                                        <check if="{{ @sought == @userSought}}">checked</check>
+                                        >{{ @sought }}
+                                    </label>
+                                </div>
+                            </repeat>
+                        </div>
+                    
+                    </fieldset>
+                
+                </div>
+                
+                <!-- Button Area -->
+                <div class="col-md-5 mr-1 buttonstuff ">
+                    
+                    
+                    <!--Biography-->
+                    <div class="form-group mb-5 ">
+                        <label class="font-weight-bold" for="biography">Biography</label>
+                        <textarea rows="6" class="form-control " id="biography" name="biography"
+                                  aria-describedby="biography"
+                                  placeholder="A little about yourself">{{@biography}}</textarea>
+                    </div>
+                    
+                    <!-- submit btn -->
+                    <div class="pt-4 floatbtn mr-3">
+                        <button class="btn btn-primary " type="submit">Next ></button>
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        </form>
+    
+    </div>
+    
+    <br>
+
+</div>
+
+</body>
+</html>

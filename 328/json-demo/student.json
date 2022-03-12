@@ -1,0 +1,22 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "gpa": 2.5
+  },
+  {
+    "firstName": "Nick",
+    "lastName": "Deer",
+    "gpa": 3.1
+  },
+  {
+    "firstName": "Joan",
+    "lastName": "Buck",
+    "gpa": 4.1
+  },
+  {
+    "firstName": "Johanson",
+    "lastName": "Doehansen",
+    "gpa": 1.6
+  }
+]

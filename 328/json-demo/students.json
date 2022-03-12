@@ -1,0 +1,23 @@
+[
+  {
+    "name": {
+      "first": "John",
+      "last": "Doe"
+    },
+    "gpa": 2.5
+  },
+  {
+    "name": {
+      "first": "Maria",
+      "last": "Jimenez"
+    },
+    "gpa": 3.8
+  },
+  {
+    "name": {
+      "first": "Tran",
+      "last": "Nguyen"
+    },
+    "gpa": 3.2
+  }
+]

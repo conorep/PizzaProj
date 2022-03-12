@@ -1,0 +1,22 @@
+{
+  "name": "328/pets",
+  "description": "Colton and Conor, Pets Paired Prgrm",
+  "license": "open source",
+  "authors": [
+    {
+      "name": "Conor OBrien",
+      "email": "obrien.conor@student.greenriver.edu"
+    },
+    {
+      "name": "Colton Marty",
+      "email": "marty.colton@student.greenriver.edu"
+    },
+    {
+      "name": "Pavel Krokhalev",
+      "email": "krokhalev.pavel@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "cobrien2/328/WEEK6",
+  "description": "Week 6 Stuff",
+  "license": "open source",
+  "authors": [
+    {
+      "name": "Conor OBrien",
+      "email": "obrien.conor@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}

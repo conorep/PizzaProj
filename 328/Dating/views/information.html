@@ -1,0 +1,124 @@
+<!--
+Conor O'Brien
+SDEV 328 Winter 2022
+information.html
+-->
+<include href="includes/header.html"></include>
+
+<!--Main page content.-->
+<div id="bs-override" class="container ">
+
+    <div class="container row border-dark  ml-1 p-3 pr-sm-0 my-shadow border border-light c">
+
+        <div class="col-12 ">
+            <h2 >Personal Information</h2>
+            <hr>
+        </div>
+
+        <!--Main form content area.-->
+        <form class="row justify-content-md-center" action="#" id="dating-form" method="post">
+
+            <!--  Contact info  -->
+            <div class="col-md-7 mb-md-0 mb-4 ">
+
+                <fieldset class="form-group p-2 ">
+
+                    <!--First and Last Name-->
+                    <!--display error if there is one -->
+                    <check if="{{ isset(@errors['name']) }}">
+                        <span class="err">{{ @errors['name'] }}</span>
+                    </check>
+                    <div class="form-group ">
+                        <label class="font-weight-bold" for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" name="fname" aria-describedby="fname"
+                               placeholder="Enter first name" value="{{ @fname }}">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" name="lname" aria-describedby="lname"
+                               placeholder="Enter last name" value="{{ @lname }}">
+                    </div>
+                    
+                    
+                    <!--Age-->
+                    <check if="{{ isset(@errors['age']) }}">
+                        <span class="err"> {{ @errors['age'] }}</span>
+                    </check>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="age">Age</label>
+                        <!--display error if there is one -->
+                        <input type="text" class="form-control" id="age" name="age" aria-describedby="age"
+                               placeholder="Enter age" value="{{ @age }}">
+                    </div>
+                    
+                    <!--  Gender  -->
+                    <!--<p class="d-block"><strong>Gender</strong></p>-->
+                    <check if="{{ isset(@errors['gender']) }}">
+                        <span class="err">{{ @errors['gender'] }}</span>
+                    </check>
+                    <div class="form-group form-inline">
+                        <!--display error if there is one -->
+                        <label class="font-weight-bold" >Gender</label>
+                        <repeat group="{{ @genders }}" value="{{ @gender }}">
+                            <div class="radio">
+                                <label >
+                                    <input id="{{ @gender }}" type="radio" name="gender" value="{{ @gender }}"
+                                           class="mr-2"<check if="{{ @gender == @userGender}}">checked</check>
+                                    >{{ @gender }}
+                                </label>
+                            </div>
+                        </repeat>
+                    </div>
+                    
+                    <!--Phone Number-->
+                    <check if="{{ isset(@errors['phonenum']) }}">
+                        <span class="err"> {{ @errors['phonenum'] }}</span>
+                    </check>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="phonenum">Phone Number</label>
+                        <input type="text" class="form-control" id="phonenum" name="phonenum"
+                               aria-describedby="phonenum" placeholder="Enter phone number" value="{{ @phonenum }}">
+                    </div>
+                    
+                    <!--Premium Member or Not-->
+                    <div class="form-group">
+                        <label class="" for="premiumCheck">
+                            <input type="checkbox" class="mr-2" id="premiumCheck" name="premiumCheck" value="yes"
+                                <check if="{{ @premiumCheck == 'yes' }}">checked</check>>
+                            Sign me up for a premium account!
+                        </label>
+                    </div>
+                </fieldset>
+                
+
+            </div>
+
+            <!--Disclaimer and Button Area -->
+            <div class="col-md-4 mr-1 buttonstuff">
+
+                <p class="disclaimer p-3 mb-5">
+                    <strong>Note:</strong> all information entered is protected by our
+                    <a id="privacy" href="privacy" target="_blank">privacy policy.</a>
+                    Profile information can only be viewed by others with your permission.
+                    <br>- You must be 18+ to use our site.
+                    <br>- Only 10-digit phone numbers are valid.
+                    <br>- Gender is not a required input.
+                </p>
+    
+                <!-- submit btn -->
+                <div class="pt-4 floatbtn mr-3">
+                    <button class="btn btn-primary " type="submit">Next ></button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>

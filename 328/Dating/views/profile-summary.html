@@ -1,0 +1,67 @@
+<!--
+Conor O'Brien
+SDEV 328 Winter 2022
+profile-summary.html
+-->
+<include href="includes/header.html"></include>
+
+<!--Main page content.-->
+<div class="container ">
+    
+    <div class="container row text-center border-dark  ml-1 p-3 pr-sm-0 my-shadow border border-light c">
+        
+        <!-- Main info -->
+        <div class="col-md-6 mb-md-0 mb-4">
+            <h4>My Information</h4>
+            
+            <hr class="ml-5 mr-1">
+            
+            <ul class="nostyle mt-4 text-left">
+                <li class="border p-2"><strong>Name:</strong> {{ @SESSION.datingMember->getFname() }} {{
+                                                              @SESSION.datingMember->getLname() }}
+                </li>
+                <li class="border p-2"><strong>Gender:</strong> {{ @SESSION.datingMember->getGender() }}</li>
+                <li class="border p-2"><strong>Age:</strong> {{ @SESSION.datingMember->getAge() }}</li>
+                <li class="border p-2"><strong>Phone Number:</strong> {{ @SESSION.datingMember->getPhone() }}</li>
+                <li class="border p-2"><strong>Email:</strong> {{ @SESSION.datingMember->getEmail() }}</li>
+                <li class="border p-2"><strong>State:</strong> {{ @SESSION.datingMember->getState() }}</li>
+                <li class="border p-2"><strong>Seeking:</strong> {{ @SESSION.datingMember->getSeeking() }}</li>
+                <check if="{{ @SESSION.datingMember instanceof PremiumMember }}">
+                    <li class="border p-2"><strong>Interests:</strong>
+                        <ul class="nostyle text-left">
+                            <li><u>Outdoor:</u> {{ @SESSION.datingMember->getOutDoorInterests() }}</li>
+                            <li><u>Indoor:</u> {{ @SESSION.datingMember->getInDoorInterests() }}</li>
+                        </ul>
+                    </li>
+                </check>
+            </ul>
+        </div>
+        
+        <!-- Bio and Pic -->
+        <div class="col-md-6 mb-md-0 mb-4 ">
+            <div class=" my-auto">
+                <img class="img-fluid chicken-pic mb-3" src="images/pretty-black-silkie.jpg"
+                     alt="a gorgeous black silkie chicken">
+            </div>
+            
+            <article>
+                <h4 class="text-center">Biography</h4>
+                <hr>
+                {{ @SESSION.datingMember->getBio() }}
+            </article>
+        
+        </div>
+        
+        <!-- create profile btn. for now just leads home (and clears session data). -->
+        <div class="row pt-2 mt-5 w-100 justify-content-center">
+            <a class="btn btn-primary " href="{{ @BASE }}">Contact Me!</a>
+        </div>
+    
+    </div>
+    
+    <br>
+
+</div>
+
+</body>
+</html>

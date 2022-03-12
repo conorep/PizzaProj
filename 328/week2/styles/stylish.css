@@ -1,0 +1,54 @@
+/*
+Conor O'Brien SDEV328
+JS 2 and 3 Assignment
+Winter 2022
+stylish.css
+*/
+
+body {
+    background-color: #c4c0c0;
+    font-size: 1.5rem;
+}
+
+input {
+    padding: 20px 20px 20px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 0;
+    max-width: 80%;
+}
+
+.centerIt {
+    border: solid #6777ee 5px;
+    text-align: center;
+    background-color: #d3f6f3;
+    width: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 12px 1px rgb(81 102 122);
+}
+
+#centerButton {
+    padding: 20px 20px 20px 20px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+#err {
+    color: red;
+}
+
+#heeHawNum {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#writeInIt {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

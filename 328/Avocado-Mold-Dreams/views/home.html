@@ -1,0 +1,69 @@
+<!--
+Conor, Pat, Regina
+SDEV328 AMD
+home.html
+-->
+<include href="includes/header.html"></include>
+
+    <div class="row px-5 justify-content-start align-items-center">
+        
+        <!--inventory item cards-->
+        <repeat group="{{ @amdProducts }}" value="{{ @item }}">
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card my-3">
+                    <img src="images/inventory/{{ @item['pic_link'] }}" class="card-img-top p-2" alt="{{ @item['description'] }}">
+                    <div class="card-body">
+                        <h3 class="card-title">Price ${{ @item['price'] }}</h3>
+                        <p class="card-text">{{ @item['description'] }}</p>
+                        
+                        <button class="btn btn-outline-success float-end addToCart" value="{{@item['item_id']}}"
+                                id="cartBtn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+            
+        </repeat>
+        
+    </div>
+    
+
+    <include href="includes/jscript.html"></include>
+
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!--This script posts to the page below, does what is in the php (session change), and makes that change available-->
+<script>
+
+//Pat's
+
+    $("#cartBtn").on("click",function(){
+        let productValue = $(this).val();
+        console.log("product val: " +productValue);
+        console.log($(this).serialize());
+        $.ajax({
+            type: "POST",
+            url: "classes/ajaxTest.php",
+            data: {val: productValue},
+            success: function(){
+            }
+        });
+        return false;
+    });
+
+//Conor's
+
+/*    $(".addToCart").on("click",function(){
+       let val = $(this).val();
+        $.ajax({
+                    type: "POST",
+                    url: "classes/ajaxTest.php",
+                    data: {'sendVal' : val},
+                    success: function(){}
+        });
+        return false;
+    });*/
+</script>
+
+</body>
+</html>

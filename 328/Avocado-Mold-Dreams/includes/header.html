@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    
+    <!--    Bootstrap 5 Styles and Main Styles-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main-styles.css">
+    
+    <!--data tables stuff-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    
+    <title>Avocado Mold Dreams</title>
+    
+    <!--  Favicon  -->
+    <link rel="icon" sizes="any" type="image/png" href="images/avoFavicon.png">
+</head>
+
+<body id="overrideBootstrap">
+    
+    <nav class="navbar navbar-expand-lg navbar-light header-colour">
+        
+        <div class="container-fluid row">
+            
+            <div class="col-12">
+                <a class="navbar-brand" href="{{@BASE}}">
+                    <img id="resize-logo" class="d-none d-md-inline-block" src="images/avoFavicon.svg" alt="avocado mold dreams logo">
+                    <img id="resize-logo-sm" class="d-inline-block d-md-none" src="images/avoFavicon.svg" alt="avocado mold dreams logo">
+                    <h2 id="title" class="text-left d-inline pb-4">Avocado Mold Dreams</h2>
+                </a>
+                <check if="@SESSION['adminOrCusty'] == 0">
+                    <a href="my-account" class="btn btn-outline-success float-end mt-4" >My Account</a>
+                </check>
+                
+                <check if="isset(@SESSION['loggedUser'])">
+                    <a href="logout" class="btn btn-outline-success float-end mt-4 me-3" >Logout</a>
+                </check>
+                
+            </div>
+            
+        </div>
+    
+    </nav>

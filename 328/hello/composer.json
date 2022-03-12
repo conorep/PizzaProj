@@ -1,0 +1,16 @@
+{
+  "name": "cobrien2/328/hello",
+  "description": "My First MVC F3 Prj",
+  "license": "open source",
+  "authors": [
+    {
+      "name": "Conor OBrien",
+      "email": "obrien.conor@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master",
+    "ext-ctype": "*",
+    "ext-mysqli": "*"
+  }
+}

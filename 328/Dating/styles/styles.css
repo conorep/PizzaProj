@@ -1,0 +1,124 @@
+/*
+Conor O'Brien
+SDEV 328 Winter 2022
+styles.css
+*/
+
+/*main styles*/
+
+body
+{
+    background-color: #f1f1f1;
+}
+
+q
+{
+    font-style: italic;
+}
+
+article
+{
+    text-align: left;
+}
+
+hr
+{
+    background-color: #1c99ad;
+}
+
+/*bootstrap overrides*/
+
+#bs-override .radio
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#bs-override .btn-primary
+{
+    color: white;
+}
+
+/*tag overrides*/
+
+#overrideColor a
+{
+    color: black;
+}
+
+#bs-override a:hover
+{
+    background-color: #2c82bb;
+    border-color: #41c7d0;
+}
+
+/*class styles*/
+
+.c
+{
+    background-color: white;
+}
+
+.nav-top
+{
+    background-color: #9cd9e3;
+}
+
+.btn-primary
+{
+    background-color: #10a7be;
+    border-color: #70CFDEFF;
+}
+
+.my-shadow
+{
+    box-shadow: 10px 10px 5px #c0c0c0;
+}
+
+.chicken-pic
+{
+    border-radius: 15px;
+}
+
+.disclaimer
+{
+    background-color: #93bea8;
+    border-radius: 10px;
+}
+
+.buttonstuff
+{
+    position: relative;
+}
+
+.floatbtn
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.nostyle
+{
+    list-style: none;
+}
+
+.err
+{
+    color: red;
+}
+
+/*id styles*/
+
+#privacy
+{
+    background-color: #5ed7d7;
+    color: black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+
+
+
+
