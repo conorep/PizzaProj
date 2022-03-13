@@ -23,11 +23,11 @@
 
         /**
          * Get premium member's indoor interests.
-         * @return array
+         * @return string
          */
         public function getInDoorInterests()
         {
-            return $this->_inDoorInterests;
+            return implode(", ", $this->_inDoorInterests);
         }
 
         /**
@@ -41,11 +41,11 @@
 
         /**
          * Get premium member's outdoor interests.
-         * @return array
+         * @return string
          */
         public function getOutDoorInterests()
         {
-            return $this->_outDoorInterests;
+            return implode(", ", $this->_outDoorInterests);
         }
 
         /**

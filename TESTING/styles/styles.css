@@ -1,0 +1,113 @@
+:root {
+    --bs-light-rgb: 122, 255, 181;
+}
+
+/*#disclaimer {*/
+/*    background-color: #f56c6c;*/
+/*    margin:20px;*/
+/*    text-align: center*/
+/*}*/
+
+body {
+    font-family: Inter;
+    /*background-color: #fcffff;*/
+    background-image: linear-gradient(180deg, rgba(255,255,255,0), white),linear-gradient(70deg, #ebfff3 50%, #fff8ea);
+}
+
+
+.bg-light {
+    background-color: #1e7e34;
+}
+
+.card-body {
+    background-color:#FFD8B2;
+    /*don't think this does anything, might strip*/
+}
+
+.accordion {
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.accordion-header {
+    background-color: #f5fff7;
+}
+
+.h2 {
+    background-color: #f5fff7;
+}
+
+.accordion-button {
+    /*background-color: #f5fff7;*/
+    background-color: #c9fde0;
+}
+
+.accordion-body {
+    background-image: linear-gradient(195deg, #fef7e5 75%, rgba(254, 247, 229,0.2));
+
+}
+
+.accordion-button:not(.collapsed) {
+    color:black;
+    background-color: #c9fde0;
+}
+
+footer {
+    background-image: linear-gradient(0deg, rgb(122, 255, 184) 99.5%, rgb(119, 215, 181));
+    box-shadow: 0 -.15rem .5rem rgba(0,0,0,.09);
+
+}
+
+
+/*CONOR STYLES*/
+
+/*TAG STYLES*/
+
+hr {
+    background-color: rgba(49, 156, 164, 0.89);
+}
+
+/*CLASS STYLES*/
+
+.box-shadows {
+    box-shadow: 0 0 12px 1px rgb(81 102 122);
+}
+
+.box-shadows2 {
+    box-shadow: 0 0 8px 1px rgb(132 161 189);
+}
+
+.footer-links {
+    text-align: left;
+}
+
+.footer-list {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+/*ID STYLES*/
+
+#disclaimer {
+    text-align: center;
+    padding: 1rem;
+}
+
+#disclaimer-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+#spacer {
+    margin-right: auto;
+    margin-left: auto;
+}

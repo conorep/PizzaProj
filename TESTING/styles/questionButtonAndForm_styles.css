@@ -1,0 +1,210 @@
+@charset "utf-8";
+/* Kevin Price for SDEV305 GreenRiverGuiltyGibbons */
+/* Sprint 1 for GRTech FAQ */
+/* October 14, 2021 */
+
+/* setup basic styles for body */
+#kevin-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* this needs to get changed on rollin and rollout */
+    margin-bottom: -24px;
+}
+
+/* ################################# */
+/* start the form here on page-load */
+#form-question {
+    max-height: 0px;
+    transform: scaleY(0);
+    opacity: 0;
+    display: flex;
+    border: solid 1px rgba(82, 157, 137, 0.28);
+    padding: 0 30px 8px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: 0px 4px 5px 1px rgba(212, 197, 221, 0.1);
+}
+
+/* ########################################### */
+/*                   buttons                   */
+.all-buttons {
+    /* only color and shadow is animated via hover transition*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 3px 1px rgba(139, 129, 140, 0.2);
+    background-color: rgb(162, 219, 238);
+    border: solid 1px rgba(85, 158, 182, 0.22);
+    border-radius: 4px;
+    font-family: arial, sans-serif;
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+}
+
+/* ################################################### */
+/* buttons containers, this is what gets resized in js */
+.all-buttons-container {
+    /* only size is animated via keyframe animation*/
+    width: 180px;
+    /* if height gets change, update window.addEventListener("resize", function(event) in js */
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    /* would prefer no color here, but it's the only way */
+    /* to prevent edge flicker in firefox */
+    background-color: rgb(48, 167, 212);
+}
+
+/* needs to happen immediately upon hover */
+.button-hover-noTransition:hover {
+    cursor: pointer;
+}
+
+/* ###################################################### */
+/* everything that must transition with a fade upon hover */
+.all-buttons:hover, #message-sent:hover {
+    /* box-shadow: 0px 0px 7px 1px rgba(99, 135, 126, 0.55); */
+    box-shadow: 0px 2px 5px 1px rgba(134, 123, 136, 0.3);
+    color: rgb(4, 5, 5);
+    background-color: rgb(134, 203, 231);
+}
+
+/* ###################################################### */
+/* buttons and confirmation message active border */
+.btn-question:focus, #message-sent:focus,
+.btn-submit:focus {
+    border: solid 1px rgba(122, 161, 207, 0.5);
+    outline: none;
+    box-shadow: 0 0 0 4.5px rgb(191, 219, 252);
+}
+
+/* ############################################ */
+/* button_question click scale-in-out animation */
+@keyframes button_question_click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.97);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ############################ */
+/* red color for error emssages */
+.error {
+    color: rgb(214, 60, 60);
+}
+
+/* ########################################## */
+/* some issues that will vary depending */
+/* on version of bootstrap used, and  */
+/* on location of form and button in the page */
+#button-question-container {
+  margin: 3px 0 0 0;
+}
+
+#message-sent {
+    visibility: hidden;
+    cursor: pointer;
+    margin: 10px 0 7px 0;
+    padding: 0 7px 0 7px;
+    font-size: 18px;
+
+    /* taken from .all-buttons */
+    border-radius: 4px;
+    box-shadow: 0px 2px 3px 1px rgba(139, 129, 140, 0.2);
+    background-color: rgb(162, 219, 238);
+    border: solid 1px rgba(85, 158, 182, 0.22);
+}
+
+#email-entry {
+    /*  this gets reffed in window.addEventListener("resize", function(event), if updated here, update there */
+    margin-bottom: 25px;
+}
+
+#form-question {
+    overflow: hidden;
+}
+
+/* only works in bootstrap 5 */
+#button-submit-container {
+  margin-bottom: 14px;
+}
+
+/* ########################## */
+/* animation for form rollout */
+@keyframes form_rollout {
+    0% {
+        transform-origin: top;
+        opacity: 0;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        transform: scaleY(0);
+        max-height: 0px;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        opacity: 1;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        transform: scaleY(1);
+        max-height: 410px;
+    }
+}
+.rollout {
+    animation: form_rollout 0.5s forwards;
+}
+
+/* ########################## */
+/* animation for form rollin */
+@keyframes form_rollin {
+    0% {
+        transform-origin: top;
+        opacity: 1;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        transform: scaleY(1);
+        max-height: 410px;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        opacity: 0;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        transform: scaleY(0);
+        max-height: 0px;
+    }
+}
+.rollin {
+    animation: form_rollin 0.5s forwards;
+}
+
+/* remove confirm message anim */
+@keyframes remove_confirm {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.remove_confirm {
+    animation: remove_confirm 0.3s forwards;
+}

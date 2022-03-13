@@ -166,12 +166,12 @@
                 //if all good, reroute!
                 if (empty($this->_f3->get('errors'))) {
                     if (isset($_POST['outdoor'])) {
-                        $_SESSION['datingMember']->setOutDoorInterests(implode(", ", $_POST['outdoor']));
+                        $_SESSION['datingMember']->setOutDoorInterests($_POST['outdoor']);
                     } else {
                         $_SESSION['datingMember']->setOutDoorInterests("No outdoor activities selected.");
                     }
                     if (isset($_POST['indoor'])) {
-                        $_SESSION['datingMember']->setInDoorInterests(implode(", ", $_POST['indoor']));
+                        $_SESSION['datingMember']->setInDoorInterests($_POST['indoor']);
                     } else {
                         $_SESSION['datingMember']->setInDoorInterests("No indoor activities selected.");
                     }
@@ -191,6 +191,7 @@
         //summary page
         function summary()
         {
+            $GLOBALS['dataLayer']->insertMember($_SESSION['datingMember']);
             $views = new Template();
             echo $views->render('views/profile-summary.html');
         }
@@ -200,6 +201,15 @@
         {
             $views = new Template();
             echo $views->render('views/privacy-policy.html');
+        }
+
+        //admin page
+        function admin()
+        {
+            $this->_f3->set('allMembers', $GLOBALS['dataLayer']->getMembers());
+
+            $views = new Template();
+            echo $views->render('views/admin.html');
         }
 
     }

@@ -1,0 +1,148 @@
+/*  STYLES SHEET
+    Conor O'Brien
+    10/14/2021 Resume Thing
+*/
+
+/*MAIN STYLES*/
+
+html {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    height: 100vh;
+    background-color: #bdbbbb;
+}
+
+header, footer {
+    border-style: solid;
+    border-color: #1c99ad;
+    border-width: 10px;
+    background-image: linear-gradient(to right, #d9e3d9, #9be791);
+}
+
+header {
+    margin-top: -10px;
+    margin-bottom: 40px;
+    padding: 15px 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+footer {
+    margin-bottom: -20px;
+    margin-top: 40px;
+    text-align: right;
+    padding-right: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+li {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: 1.3rem;
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+li:nth-of-type(1) {
+    list-style-type: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+li:nth-of-type(2) {
+    list-style-type: none;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+img {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+nav {
+    font-size: 1.5rem;
+    padding-right: 0;
+}
+
+nav a {
+    font-size: 1.4rem;
+}
+
+
+/*ID STYLES*/
+
+#side-stuff {
+    font-size: 1rem;
+    background: #9be791;
+}
+
+#main-content {
+    font-size: 2rem;
+    height: 100%;
+    padding: 20px 20px 20px 20px;
+}
+
+#big-text {
+    font-size: 3.5rem;
+}
+
+#mid-text {
+    font-size: 2rem;
+}
+
+#big-text, #mid-text {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+#idLinkedInIcon {
+    background-color:rgb(0, 102, 170);
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+    display:inline-block;
+    font:bold 20px Arial, Helvetica, sans-serif;
+    height:25px;
+    margin-top:1px;
+    text-align:center;
+    width:25px;
+}
+
+#idLinkedInIcon:hover {
+    background-color:#06d;
+}
+
+
+
+/*CLASS STYLES*/
+
+.smaller {
+    font-size: 0.9rem;
+}
+
+.no-style {
+    list-style-type: none;
+}
+
+/*MEDIA QUERIES*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media only screen and (max-width: 576px) {
+    html {
+        font-size: 0.5rem;
+    }
+}
+
+/*Small devices (landscape phones, less than 768px)*/
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 0.65rem;
+    }
+}

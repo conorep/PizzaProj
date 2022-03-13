@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="cobrien2.greenriverdev.com" id="f564f569-c85c-4504-b6f1-763ca8c8c911" port="18765" nameFormat="DESCRIPTIVE" username="cobrieng" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="gr-guilty-gibbons.greenriverdev.com" id="642fd623-6731-4ea4-bcb4-25c157e20dda" port="18765" nameFormat="DESCRIPTIVE" username="grguilty" />
+    </configs>
+  </component>
+</project>

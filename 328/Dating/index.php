@@ -52,6 +52,12 @@
         $GLOBALS['con']->privacy();
     });
 
+    // admin page
+    $f3->route('GET|POST /admin', function ()
+    {
+        $GLOBALS['con']->admin();
+    });
+
     //run fat-free -> invokes
     $f3->run();
 

@@ -3,7 +3,7 @@
      * Conor O'Brien SDEV 328
      * data-layer.php
      * */
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/../db-creds.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/../datingconfig.php';
 
     /**
      * Class storing data for dating site.
@@ -17,14 +17,93 @@
         //define default constructor
         public function __construct()
         {
-            //oops make them constants
             try {
                 //instantiate a PDO database object
                 $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-                echo "\nSuccessful.";
             } catch (PDOException $e) {
                 echo "\nError connecting to DB " . $e->getMessage();
             }
+        }
+
+        //TODO: add picture functions to site
+
+        /**
+         * Add a user row when a new user is created. Take in member object, go from there.
+         * @param $memberObj object
+         * @return void
+         */
+        function insertMember($memberObj)
+        {
+            $sql = 'INSERT INTO member (fname, lname, age, gender, phone, email, state, seeking, biography, premium, interests)
+                    VALUES(:fname, :lname, :age, :gender, :phone, :email, :userstate, :seeking, :biography, :premium, :interests)';
+            $statement = $this->_dbh->prepare($sql);
+
+            $memberType = $memberObj instanceof PremiumMember ? 1 : 0;
+            if ($memberObj instanceof PremiumMember) {
+                $memberInterests = $memberObj->getOutDoorInterests();
+                $memberInterests .= ", " . $memberObj->getInDoorInterests();
+            } else {
+                $memberInterests = null;
+            }
+            /*$memberPic = $memberObj instanceof PremiumMember ? $memberObj->getPic() : null;*/
+
+            $statement->bindParam(':fname', $memberObj->getFname());
+            $statement->bindParam(':lname', $memberObj->getLname());
+            $statement->bindParam(':age', $memberObj->getAge());
+            $statement->bindParam(':gender', $memberObj->getGender());
+            $statement->bindParam(':phone', $memberObj->getPhone());
+            $statement->bindParam(':email', $memberObj->getEmail());
+            $statement->bindParam(':userstate', $memberObj->getState());
+            $statement->bindParam(':seeking', $memberObj->getSeeking());
+            $statement->bindParam(':biography', $memberObj->getBio());
+            $statement->bindParam(':premium', $memberType);
+            $statement->bindParam(':interests', $memberInterests);
+            /*$statement->bindParam(':image', $memberPic);*/
+
+            $statement->execute();
+        }
+
+        /**
+         * Get all members in the database and return.
+         * @return array of member data
+         */
+        function getMembers()
+        {
+            $sql = 'SELECT * FROM member ORDER BY lname';
+            $statement = $this->_dbh->prepare($sql);
+            $statement->execute();
+
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        /**
+         * Get a specific member from DB. Input userID, output all details.
+         * @param $memberId string ID of member to return
+         * @return array of member data, or empty ("")if not found
+         */
+        function getMember($memberId)
+        {
+            $sql = 'SELECT * FROM member WHERE member_id = :memberID';
+            $statement = $this->_dbh->prepare($sql);
+            $statement->bindParam(':memberID', $memberId);
+            $statement->execute();
+
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
+
+        /**
+         * Return all interests of member.
+         * @param $memberId string ID of member
+         * @return array of member data, or empty ("")if not found
+         */
+        function getInterests($memberId)
+        {
+            $sql = 'SELECT interests FROM member WHERE member_id = :memberID';
+            $statement = $this->_dbh->prepare($sql);
+            $statement->bindParam(':memberID', $memberId);
+            $statement->execute();
+
+            return $statement->fetch(PDO::FETCH_ASSOC);
         }
 
         /**

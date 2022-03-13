@@ -94,15 +94,27 @@
             return $sum;
         }
 
-        function completeOrder()
+        function completeOrder($orderID)
         {
-
+            $sql = "UPDATE orders SET is_fulfilled = 1, fulfilled_date = :fdate WHERE order_id = :orderid";
+            $statement = $this->_dbh->prepare($sql);
+            $thisdate = date("Y-m-d H:i:s");
+            $statement->bindParam(':orderid', $orderID);
+            $statement->bindParam(':fdate', $thisdate);
+            $statement->execute();
         }
 
-        function addNewAdmin($userId)
+        function changeUserType($userId, $number)
         {
+            $sql = "UPDATE users SET is_admin = :adminnum WHERE user_id = :userid";
 
+            $statement = $this->_dbh->prepare($sql);
+            $statement->bindParam(':userid', $userId);
+            $statement->bindParam(':adminnum', $number);
+
+            $statement->execute();
         }
+
 
         //TODO: set a qty in item_stock table after this. need item_id, though
         function addNewItem($itemName, $itemPrice, $itemDesc, $sendName)

@@ -1,0 +1,88 @@
+<!--
+Conor O'Brien
+SDEV 328 Winter 2022
+admin.html
+-->
+<include href="includes/header.html"></include>
+
+<!--Main page content.-->
+<div class="container-fluid ">
+    
+    <h2 class="text-center">ADMIN PAGE</h2>
+    
+    <table id="datingUsers" class="display" style="width: 100%;">
+        <thead>
+            <tr>
+                <td>Member ID</td>
+                <td>Name</td>
+                <td class="d-none">lname</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Phone Number</td>
+                <td>Email</td>
+                <td>State</td>
+                <td>Seeking</td>
+                <td>Premium</td>
+                <td>Interests</td>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <repeat group="{{@allMembers}}" value="{{@member}}">
+                <tr>
+                    <td>{{@member['member_id']}}</td>
+                    <td>{{@member['fname']}} {{@member['lname']}}</td>
+                    <td class="d-none">{{@member['lname']}}</td>
+                    <td>{{@member['age']}}</td>
+                    <td>{{@member['gender']}}</td>
+                    <td>{{@member['phone']}}</td>
+                    <td>{{@member['email']}}</td>
+                    <td>{{@member['state']}}</td>
+                    <td>{{@member['seeking']}}</td>
+                    <td>
+                        <check if="@member['premium'] == 1">
+                            <true><label><input type="checkbox" checked ></label></true>
+                            <false><label><input type="checkbox" disabled></label></false>
+                        </check>
+                    </td>
+                    <td>{{@member['interests']}}</td>
+                </tr>
+            </repeat>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td>Member ID</td>
+                <td>Name</td>
+                <td class="d-none">lname</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Phone Number</td>
+                <td>Email</td>
+                <td>State</td>
+                <td>Seeking</td>
+                <td>Premium</td>
+                <td>Interests</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    
+    <br>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script>
+    $("#datingUsers").DataTable(
+            {
+                responsive: true,
+                "order": [[ 2, "asc" ]]
+            }
+    );
+    $(":checkbox").on("click", false);
+</script>
+</body>
+</html>

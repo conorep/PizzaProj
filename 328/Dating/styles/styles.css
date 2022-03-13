@@ -26,6 +26,10 @@ hr
     background-color: #1c99ad;
 }
 
+#bs-override tr {
+    max-height: 3rem;
+}
+
 /*bootstrap overrides*/
 
 #bs-override .radio
@@ -117,6 +121,7 @@ hr
     border-radius: 5px;
     padding: 3px;
 }
+
 
 
 

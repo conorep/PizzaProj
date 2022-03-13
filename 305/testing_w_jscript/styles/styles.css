@@ -1,0 +1,42 @@
+
+/*the actual button*/
+.dropBtn {
+    background-color: #1c1c35;
+    color: white;
+    padding: 10px;
+    font-size: 2em;
+    border: inset;
+    cursor: crosshair;
+}
+
+/*color the button when you hover and focus*/
+.dropBtn:hover, .dropBtn:focus {
+    background-color: #00c46a;
+}
+
+/*give the container a position to allow for the dropdown stuff*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/*default hidden drop stuff*/
+.theDropStuff {
+    display: none;
+    position: relative;
+    background-color: #50ff49;
+    min-width: 30%;
+}
+
+.theDropStuff li {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+
+/*class to add to dropdown container with JS*/
+.show {
+    display: block;
+}

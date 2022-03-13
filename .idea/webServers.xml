@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="709bfec2-b6b0-4e85-90d8-742f20ef494c" name="GreenRiverDev" url="https://cobrien2.greenriverdev.com">
+        <fileTransfer rootFolder="/home/cobrieng/public_html" accessType="SFTP" host="cobrien2.greenriverdev.com" port="18765" sshConfigId="f564f569-c85c-4504-b6f1-763ca8c8c911" sshConfig="cobrieng@cobrien2.greenriverdev.com:18765 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="bc03c55b-bf9e-4af6-ac14-f68465e08558" name="GRGuiltyGibbons" url="http://gr-guilty-gibbons.greenriverdev.com">
+        <fileTransfer rootFolder="/home/grguilty/public_html" accessType="SFTP" host="gr-guilty-gibbons.greenriverdev.com" port="18765" sshConfigId="642fd623-6731-4ea4-bcb4-25c157e20dda" sshConfig="grguilty@gr-guilty-gibbons.greenriverdev.com:18765 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

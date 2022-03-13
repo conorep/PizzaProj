@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../GRGuiltyGibbons/Conor/.idea/Conor.iml" filepath="$PROJECT_DIR$/../GRGuiltyGibbons/Conor/.idea/Conor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GRGuiltyGibbons/.idea/GRGuiltyGibbons.iml" filepath="$PROJECT_DIR$/../GRGuiltyGibbons/.idea/GRGuiltyGibbons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GreenRiverDev.iml" filepath="$PROJECT_DIR$/.idea/GreenRiverDev.iml" />
+    </modules>
+  </component>
+</project>
